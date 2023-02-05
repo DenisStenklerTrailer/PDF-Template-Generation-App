@@ -15,7 +15,6 @@ for index, row in df.iterrows():
             pdf.set_font('Arial', 'B', 14) # (family, style, size)
             pdf.set_text_color(100, 100, 100) #RGB
             pdf.cell(w=0, h=12, txt=row["Topic"], align="L", ln=1) # ln is actually a break line
-            pdf.line(10, 20, 200, 20) # (x1,y1,x2,y2)
 
             pdf.ln(258)  # 258mm
             pdf.set_font('Arial', 'B', 8)  # (family, style, size)
@@ -27,6 +26,9 @@ for index, row in df.iterrows():
             pdf.set_font('Arial', 'B', 8)  # (family, style, size)
             pdf.set_text_color(180, 180, 180)  # RGB
             pdf.cell(w=0, h=12, txt=row["Topic"], align="R", ln=1)
+
+        for y in range(20, 280, 10) :
+            pdf.line(10, y, 200, y)  # (x1,y1,x2,y2)
 
 
 
